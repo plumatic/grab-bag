@@ -1,0 +1,330 @@
+global-reset()
+nested-reset()
+reset-html5()
+
+@import 'lib/color'
+
+body, html
+  margin: 0px
+  padding: 0px
+  text-rendering: optimizeLegibility
+  font-size: 13px
+  font-weight: 400
+  line-height: 24px
+  color: text-color
+  font-family: "Helvetica Neue", Helvetica, Arial
+  background: bg-color
+  background-attachment: fixed
+
+#expand
+  cursor: pointer
+
+#sidebar
+  right: 0px
+  position: fixed
+  width: 300px
+  height: 100%
+  background: transparent
+  h3
+    color: text_light
+    font-size: 24px
+    padding: 10px 20px
+  font-size: 16px
+  ul
+    padding: 0 20px
+  li
+    list-style: none
+      .row
+        width: 250px
+        .item
+          width: 230px
+  a
+   text-decoration: none
+   color: blue_light
+   cursor: pointer
+   &:hover
+     color: orange_light
+   &:active
+     color: orange_dark
+
+#container
+  width: 100%
+  height: 100%
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+  padding-left: 20px
+  #header, .header-block
+    position: absolute
+    height: 58px
+    width: 100%
+    z-index: 10000
+    margin-left: -1px
+  .header-block
+    background: bg_header
+  
+
+#admin
+  top: 45px
+  box-sizing: border-box
+  margin-right: 300px
+  padding: 20px
+  &.loading
+    opacity: .4
+  iframe.fullSize
+    width: 100%
+    height: 92%
+  .session, .action
+    margin-bottom: 8px
+    a
+      font-size: 12px
+      color: #666
+      padding: 0px 4px
+      &:hover
+        color: #000
+        text-decoration: underline
+    .topic
+      font-weight: bolder !important
+      font-size: 14px
+    .context
+      display: inline-block
+      float: right
+    .user, .details
+      background-color: #fff
+      border: 1px solid #c5c5c5
+      padding: 8px
+      font-weight: normal
+      font-size: 14px
+      clear: both
+    figure
+      float: left
+      background: #fff
+      border: 1px solid #999
+      display: inline-block
+      img
+        width: 36px
+        height: 36px
+        margin: 3px 3px 1px 3px
+        overflow: hidden
+    .about
+      float: left
+      line-height: 13px
+      margin-left: 8px
+    .name
+      font-weight: bolder
+    .handle
+      padding-left: 8px
+      font-size: 12px
+    .bio
+      font-size: 12px
+      padding-top: 4px
+      color: #666
+      width: 500px
+    label
+     font-weight: 500
+     padding: 0px 6px
+     color: #333
+    .counts
+      float: right
+      line-height: 13px
+    .tokens
+      line-height: 18px
+      padding-top: 14px
+      float: right
+      clear: right
+    .clear
+      float: none
+      clear: both
+    .browser, .stats, .top, .bottom
+      display: block
+      padding: 5px 6px 5px 5px
+      line-height: 12px
+      font-size: 12px
+      background: #e7e7e7
+      color: #333
+      border: 1px solid #c5c5c5
+      border-bottom: none
+      clear: both
+      span
+       padding-left: 4px
+       padding-right: 8px
+       font-weight: normal
+      .os
+       font-weight: 500;
+       width: 90px;
+       border-right: 1px solid #666
+    .top
+      background-color: #DFE7ED !important
+      border-bottom: 1px solid #c5c5c5
+      span.time
+        float: right
+        font-weight: normal
+        font-size: 12px
+        line-height: 13px
+    .details
+      border-top: none
+    .stats, .bottom
+      border-top: none
+      border-bottom: 1px solid #c5c5c5
+    .general
+      float: right
+      display: inline-block
+      font-weight: normal
+      .duration
+        font-weight: 500
+        padding-left: 24px
+    &.active
+      .browser, .stats, .top
+        background-color: #EBE1CC !important
+
+.instance
+  box-sizing: border-box
+  .infoLine
+    border-bottom: 1px solid #c5c5c5
+    padding: 5px
+    cursor: pointer
+    &:hover
+      background-color: #ededed
+    a, .uptime
+      float: right
+      padding-right: 20px
+      text-decoration: none
+    .pubsub
+      font-size: 10px
+      padding-left: 10px
+    h2
+      font-size: 20px
+      font-weight: 500
+      display: inline-block
+    a
+      color: #08C
+  .details
+    display: none
+    padding: 0 50px 20px
+    h3
+      background: #ededed
+      margin-top: 8px
+      padding: 6px
+      cursor: pointer
+      border: 1px solid #999
+      font-size: 18px
+      font-weight: 500
+      &:hover
+        color: #08C
+    table
+      display: none
+      width: 100%
+      border-collapse: collapse
+      margin-bottom: 20px
+      border-top: none
+      tr
+        background: #fff
+      tbody
+        tr 
+          &:nth-child(even)
+            background-color: #f8f8f8
+            &:hover
+              background-color: #f6f6f6
+          &:nth-child(odd)
+            background-color: #ededed
+            &:hover
+              background-color: #e0e0e0
+      td, th
+        border: 1px solid #999
+        padding: 4px
+        text-align: center
+        font-family: Helvetica Arial
+        font-size: 14px
+        font-weight: normal
+        overflow: scroll
+      th
+        font-weight: bolder
+        font-size: 16px
+    
+.panel
+  float left
+  margin 40px
+  width 300x
+  background #202223
+  color #a6a6a6
+  font-family "Helvetica Neue"
+  .title
+    font-size 24px
+    padding 6px
+    border 1px solid #252728
+    border-bottom 1px solid #000
+  .content
+    padding 6px
+    .value
+      font-weight bolder
+      font-size 72px
+    .metric
+      float: right
+      font-size 18px
+    .positive
+      color #86a147
+    .negative
+      color #be5932
+
+
+.feedback
+  background: #fdfdfd
+  border: 1px solid #e9ebf2
+  width: 500px
+  margin: 20px auto
+  .meta
+    padding: 10px
+    margin-bottom: 10px
+    background: #e6e9f0
+    .user, .email, .date
+      display: inline-block
+    .date
+      float: right
+    .user
+      float: left
+      padding-right: 12px
+      
+  .comment
+    margin: 0 auto
+    width: 480px
+    height: auto
+    resize: none
+    outline:0
+    border:0
+    border-top: 1px solid #f4f5f8
+    border-bottom: 1px solid #f4f5f8
+    font-size: 12px
+    line-height: 22px
+    color: #686868
+    overflow: hidden
+  .replies
+    display:none
+  button
+    margin: 10px
+    float: right
+  .clear
+    clear: both
+    width: 100%
+    
+ul.tabs
+  border-bottom: 1px solid #e9ebf1
+  li
+    position: relative
+    display: inline-block
+    padding-right: 20px
+    padding-left: 14px
+    border: 1px solid transparent
+    border-bottom: none
+    line-height: 27px
+    font-family: 'Helvetica Neue', Helvetica, Arial
+    font-size: 14px
+    font-weight: 500
+    color: newsfeed_topic_link
+    cursor: pointer
+    text-decoration: none
+    &:hover
+      color: #ff9500
+    &.active
+      border: 1px solid #e9ebf1
+      border-bottom: none
+      background: #f6fafe 

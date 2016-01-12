@@ -1,0 +1,1 @@
+Simple sample project to serve as a template for using haderp.

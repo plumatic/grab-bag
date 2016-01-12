@@ -1,0 +1,14 @@
+#!/bin/bash
+
+TRAMPOLINE_FILE="/tmp/crane-trampoline-$RANDOM"
+
+CRANE_TRAMPOLINE_FILE="$TRAMPOLINE_FILE" lein with-profile user crane "$@"
+#JVM_OPTS="$JVM_OPTS -Dcrane.trampoline-file=$TRAMPOLINE_FILE"  
+#TRAMPOLINE_FILE=$TRAMPOLINE_FILE lein crane ./foo.sh 
+
+if [ -r $TRAMPOLINE_FILE ]; then
+    TRAMPOLINE="$(cat $TRAMPOLINE_FILE)"
+    rm $TRAMPOLINE_FILE
+    exec sh -c "$TRAMPOLINE"
+fi
+

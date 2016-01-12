@@ -1,0 +1,5 @@
+{:key "Your Key here"
+ :secretkey "Your secret key here"
+ :key-path "~/.crane.pem"
+ :key-name "learner"
+ :user "ubuntu"}

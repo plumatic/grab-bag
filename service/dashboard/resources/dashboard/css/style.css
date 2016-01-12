@@ -1,0 +1,73 @@
+body {
+    font: 14px 'Myriad Pro';
+    background: #222;
+    color: #fff;
+    margin: 0;
+}
+
+#feed-table {
+    transition: all 0.5s;
+}
+
+.loading #feed-table {
+    opacity: 0.3;
+}
+
+#feed-select {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    outline: none;
+    font-size: 18px;
+    margin: 0;
+    z-index: 1;
+}
+
+table {
+    margin: 0 auto;
+    border-spacing: 1px;
+}
+
+thead {
+    margin: 0;
+    background: #222;
+}
+
+.fixed {
+    position: fixed;
+}
+
+a {
+    color: #c1f0ff;
+    text-decoration: none;
+}
+
+td, th {
+    padding: 10px;
+    background: #333;
+    word-wrap: break-word;
+    vertical-align: top;
+}
+
+th {
+    font-weight: bold;
+    text-align: left;
+    background: #2a2a2a;
+}
+
+tr:nth-child(even) td {
+    background: #3e3e3e;
+}
+
+.title {
+    font-size: 18px;
+}
+
+.url {
+    color: #666;
+}
+
+.content-table {
+    overflow: auto;
+    height: 500px;
+}

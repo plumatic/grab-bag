@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -e
+sh `dirname $0`/ppull
+sh `dirname $0`/ppush

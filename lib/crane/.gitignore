@@ -1,0 +1,25 @@
+build
+target
+lib
+*.dot
+snapshots/**
+# use glob syntax.
+.lein-failures
+syntax: glob
+Manifest.txt
+pom.xml
+*.ser
+*.class
+*.jar
+*~
+*.bak
+*.off
+*.old
+.DS_Store
+*.#*
+*#*
+*.classpath
+*.project
+*.settings
+*.pyc
+checkouts

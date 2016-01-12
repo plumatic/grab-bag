@@ -1,0 +1,5 @@
+#!/bin/bash
+
+exec 2>&1
+ulimit -n 8192
+exec envdir ./env crane run start

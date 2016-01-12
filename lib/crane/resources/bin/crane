@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Default options
+if [ -z "$JVM_OPTS" ]; then
+    JVM_OPTS="-server -Xmx2500m"
+fi
+
+if [ -z "$CRANE_PROJ_PATH" ]; then
+    CRANE_PROJ_PATH=$PWD
+fi
+
+if [ -z "$CRANE_CONFIG" ]; then
+    CRANE_CONFIG="config"
+fi
+
+if [ `find $CRANE_PROJ_PATH -name "*-standalone.jar" | wc -l` != 1  ] 
+  then
+    echo " fuck city suck" 
+    exit 1
+fi
+
+JVM_OPTS="-server -Dcrane.instanceId=$INSTANCE_ID -Dcrane.proj.path=$CRANE_PROJ_PATH -Dcrane.config=$CRANE_CONFIG -Djava.awt.headless=true -Dfile.encoding=UTF8 $JVM_OPTS"
+
+exec java $JVM_OPTS -cp $CRANE_PROJ_PATH/*-standalone.jar clojure.main - $@ <<< "(require (quote crane.main)) (crane.main/main *command-line-args*)"

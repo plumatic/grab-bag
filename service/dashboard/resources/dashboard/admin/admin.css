@@ -1,0 +1,459 @@
+body,
+html {
+  margin: 0px;
+  padding: 0px;
+  text-rendering: optimizeLegibility;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 24px;
+  color: text-color;
+  font-family: "Helvetica Neue", Helvetica, Arial;
+  background: #fdfdfd;
+  background-attachment: fixed;
+  height: 100%;
+}
+#expand {
+  cursor: pointer;
+}
+#sidebar {
+  right: 0px;
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background: transparent;
+  font-size: 16px;
+}
+#sidebar h3 {
+  color: #b6bcc9;
+  font-size: 24px;
+  padding: 10px 20px;
+}
+#sidebar ul {
+  padding: 0 20px;
+}
+#sidebar li list-style: none .row {
+  width: 250px;
+}
+#sidebar li list-style: none .row .item {
+  width: 230px;
+}
+#sidebar a {
+  text-decoration: none;
+  color: #08c;
+  cursor: pointer;
+}
+#sidebar a:hover {
+  color: #ff9500;
+}
+#sidebar a:active {
+  color: #ff6900;
+}
+#container {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  padding-left: 20px;
+}
+#container #header,
+#container .header-block {
+  position: absolute;
+  height: 58px;
+  width: 100%;
+  z-index: 10000;
+  margin-left: -1px;
+}
+#container .header-block {
+  background: bg_header;
+}
+#admin {
+  top: 45px;
+  box-sizing: border-box;
+  margin-right: 300px;
+  padding: 20px;
+  height:100%;
+}
+#admin.loading {
+  opacity: 0.4;
+}
+#admin iframe.fullSize {
+  width: 100%;
+  height: 98%;
+}
+#admin .session,
+#admin .action {
+  margin-bottom: 8px;
+}
+#admin .session a,
+#admin .action a {
+  font-size: 12px;
+  color: #666;
+  padding: 0px 4px;
+}
+#admin .session a:hover,
+#admin .action a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+#admin .session .topic,
+#admin .action .topic {
+  font-weight: bolder !important;
+  font-size: 14px;
+}
+#admin .session .context,
+#admin .action .context {
+  display: inline-block;
+  float: right;
+}
+#admin .session .user,
+#admin .action .user,
+#admin .session .details,
+#admin .action .details {
+  background-color: #fff;
+  border: 1px solid #c5c5c5;
+  padding: 8px;
+  font-weight: normal;
+  font-size: 14px;
+  clear: both;
+}
+#admin .session figure,
+#admin .action figure {
+  float: left;
+  background: #fff;
+  border: 1px solid #999;
+  display: inline-block;
+}
+#admin .session figure img,
+#admin .action figure img {
+  width: 36px;
+  height: 36px;
+  margin: 3px 3px 1px 3px;
+  overflow: hidden;
+}
+#admin .session .about,
+#admin .action .about {
+  float: left;
+  line-height: 13px;
+  margin-left: 8px;
+}
+#admin .session .name,
+#admin .action .name {
+  font-weight: bolder;
+}
+#admin .session .handle,
+#admin .action .handle {
+  padding-left: 8px;
+  font-size: 12px;
+}
+#admin .session .bio,
+#admin .action .bio {
+  font-size: 12px;
+  padding-top: 4px;
+  color: #666;
+  width: 500px;
+}
+#admin .session label,
+#admin .action label {
+  font-weight: 500;
+  padding: 0px 6px;
+  color: #333;
+}
+#admin .session .counts,
+#admin .action .counts {
+  float: right;
+  line-height: 13px;
+}
+#admin .session .tokens,
+#admin .action .tokens {
+  line-height: 18px;
+  padding-top: 14px;
+  float: right;
+  clear: right;
+}
+#admin .session .clear,
+#admin .action .clear {
+  float: none;
+  clear: both;
+}
+#admin .session .browser,
+#admin .action .browser,
+#admin .session .stats,
+#admin .action .stats,
+#admin .session .top,
+#admin .action .top,
+#admin .session .bottom,
+#admin .action .bottom {
+  display: block;
+  padding: 5px 6px 5px 5px;
+  line-height: 12px;
+  font-size: 12px;
+  background: #e7e7e7;
+  color: #333;
+  border: 1px solid #c5c5c5;
+  border-bottom: none;
+  clear: both;
+}
+#admin .session .browser span,
+#admin .action .browser span,
+#admin .session .stats span,
+#admin .action .stats span,
+#admin .session .top span,
+#admin .action .top span,
+#admin .session .bottom span,
+#admin .action .bottom span {
+  padding-left: 4px;
+  padding-right: 8px;
+  font-weight: normal;
+}
+#admin .session .browser .os,
+#admin .action .browser .os,
+#admin .session .stats .os,
+#admin .action .stats .os,
+#admin .session .top .os,
+#admin .action .top .os,
+#admin .session .bottom .os,
+#admin .action .bottom .os {
+  font-weight: 500;
+  width: 90px;
+  border-right: 1px solid #666;
+}
+#admin .session .top,
+#admin .action .top {
+  background-color: #dfe7ed !important;
+  border-bottom: 1px solid #c5c5c5;
+}
+#admin .session .top span.time,
+#admin .action .top span.time {
+  float: right;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 13px;
+}
+#admin .session .details,
+#admin .action .details {
+  border-top: none;
+}
+#admin .session .stats,
+#admin .action .stats,
+#admin .session .bottom,
+#admin .action .bottom {
+  border-top: none;
+  border-bottom: 1px solid #c5c5c5;
+}
+#admin .session .general,
+#admin .action .general {
+  float: right;
+  display: inline-block;
+  font-weight: normal;
+}
+#admin .session .general .duration,
+#admin .action .general .duration {
+  font-weight: 500;
+  padding-left: 24px;
+}
+#admin .session.active .browser,
+#admin .action.active .browser,
+#admin .session.active .stats,
+#admin .action.active .stats,
+#admin .session.active .top,
+#admin .action.active .top {
+  background-color: #ebe1cc !important;
+}
+.instance {
+  box-sizing: border-box;
+}
+.instance .infoLine {
+  border-bottom: 1px solid #c5c5c5;
+  padding: 5px;
+  cursor: pointer;
+}
+.instance .infoLine:hover {
+  background-color: #ededed;
+}
+.instance .infoLine a,
+.instance .infoLine .uptime {
+  float: right;
+  padding-right: 20px;
+  text-decoration: none;
+}
+.instance .infoLine .pubsub {
+  font-size: 10px;
+  padding-left: 10px;
+}
+.instance .infoLine .pubsub table {
+  line-height: normal;
+  display: inline-flex;
+}
+.instance .infoLine .pubsub table td { padding-left: 2px; }
+.instance .infoLine .pubsub table td.sub { color: #f00; }
+.instance .infoLine .pubsub table td.pub { color: #000; }
+.instance .infoLine .pubsub table.sub tr:nth-child(even) { background-color: #eee; }
+.instance .infoLine .pubsub table.pub tr:nth-child(odd) { background-color: #eee; }
+.instance .infoLine .pubsub table td.header { text-decoration: underline; }
+.instance .infoLine h3 {
+  font-size: 20px;
+  font-weight: 500;
+  display: inline-block;
+  margin: 0px;
+}
+.instance .infoLine a {
+  color: #08c;
+}
+.instance .details {
+  display: none;
+  padding: 0 50px 20px;
+}
+.instance .details h3 {
+  background: #ededed;
+  margin-top: 8px;
+  padding: 6px;
+  cursor: pointer;
+  border: 1px solid #999;
+  font-size: 18px;
+  font-weight: 500;
+}
+.instance .details h3:hover {
+  color: #08c;
+}
+.instance .details table {
+  display: none;
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  border-top: none;
+}
+.instance .details table tr {
+  background: #fff;
+}
+.instance .details table tbody tr:nth-child(even) {
+  background-color: #f8f8f8;
+}
+.instance .details table tbody tr:nth-child(even):hover {
+  background-color: #f6f6f6;
+}
+.instance .details table tbody tr:nth-child(odd) {
+  background-color: #ededed;
+}
+.instance .details table tbody tr:nth-child(odd):hover {
+  background-color: #e0e0e0;
+}
+.instance .details table td,
+.instance .details table th {
+  border: 1px solid #999;
+  padding: 4px;
+  text-align: center;
+  font-family: Helvetica Arial;
+  font-size: 14px;
+  font-weight: normal;
+  overflow: scroll;
+}
+.instance .details table th {
+  font-weight: bolder;
+  font-size: 16px;
+}
+.panel {
+  float: left;
+  margin: 40px;
+  width: 300x;
+  background: #202223;
+  color: #a6a6a6;
+  font-family: "Helvetica Neue";
+}
+.panel .title {
+  font-size: 24px;
+  padding: 6px;
+  border: 1px solid #252728;
+  border-bottom: 1px solid #000;
+}
+.panel .content {
+  padding: 6px;
+}
+.panel .content .value {
+  font-weight: bolder;
+  font-size: 72px;
+}
+.panel .content .metric {
+  float: right;
+  font-size: 18px;
+}
+.panel .content .positive {
+  color: #86a147;
+}
+.panel .content .negative {
+  color: #be5932;
+}
+.feedback {
+  background: #fdfdfd;
+  border: 1px solid #e9ebf2;
+  width: 500px;
+  margin: 20px auto;
+}
+.feedback .meta {
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #e6e9f0;
+}
+.feedback .meta .user,
+.feedback .meta .email,
+.feedback .meta .date {
+  display: inline-block;
+}
+.feedback .meta .date {
+  float: right;
+}
+.feedback .meta .user {
+  float: left;
+  padding-right: 12px;
+}
+.feedback .comment {
+  margin: 0 auto;
+  width: 480px;
+  height: auto;
+  resize: none;
+  outline: 0;
+  border: 0;
+  border-top: 1px solid #f4f5f8;
+  border-bottom: 1px solid #f4f5f8;
+  font-size: 12px;
+  line-height: 22px;
+  color: #686868;
+  overflow: hidden;
+}
+.feedback .replies {
+  display: none;
+}
+.feedback button {
+  margin: 10px;
+  float: right;
+}
+.feedback .clear {
+  clear: both;
+  width: 100%;
+}
+ul.tabs {
+  border-bottom: 1px solid #e9ebf1;
+}
+ul.tabs li {
+  position: relative;
+  display: inline-block;
+  padding-right: 20px;
+  padding-left: 14px;
+  border: 1px solid transparent;
+  border-bottom: none;
+  line-height: 27px;
+  font-family: 'Helvetica Neue', Helvetica, Arial;
+  font-size: 14px;
+  font-weight: 500;
+  color: newsfeed_topic_link;
+  cursor: pointer;
+  text-decoration: none;
+}
+ul.tabs li:hover {
+  color: #ff9500;
+}
+ul.tabs li.active {
+  border: 1px solid #e9ebf1;
+  border-bottom: none;
+  background: #f6fafe;
+}

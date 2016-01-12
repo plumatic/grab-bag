@@ -1,0 +1,33 @@
+#!/bin/bash
+
+set -e
+STASHCOMMIT=`git stash create`
+pushd `dirname $0`
+
+if [ -n "$STASHCOMMIT" ];
+then 
+  echo Reverting local changes stashed at $STASHCOMMIT
+  git reset --hard
+else
+  echo No local changes
+fi
+
+set +e
+sh ptest
+TESTSTAT=$?
+
+if [ "$TESTSTAT" -ne 0 ];
+then 
+  echo "Not pushing due to failed tests"
+else
+  echo "Attempting to push changes after successful tests"
+  git push
+fi
+
+if [ -n "$STASHCOMMIT" ];
+then
+  popd
+  echo Reapplying local changes
+  git stash apply $STASHCOMMIT
+fi
+

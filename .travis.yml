@@ -1,0 +1,20 @@
+language: clojure
+env:
+  global:
+    - secure: OhV9+Fv5Ja0gttpRe6Z/ZwoUVxUnhPusCYT6quQOPOq/I99DYbajOkkWSFI0Ijio5KG3JKjP8t6OwiCmcGO1wBLyXEJaRN4hd4gelA53Tqba3CkY+iWLtLMBH+J80jqL6Ca5Rfiu7FaaSG9rfwfdANluGxtyeXYdteTlyPT4zrg=
+    - secure: cA0CXcnQRF5B4BpdMhiWjTU2o3o6eFvGkP/pP8BXFjXrhY9cUeI34VOsXpcBhBrNHiPYToTiixUtN52x76olrKWVI/JmbW87l3pEuxaXZZdzNuJ03MnKiTDTN4BpKUPTzWLtWbJRhLmsdq7J/5Ym0B/sIXKzdz6NWfsdLWXpPcI=
+  matrix:
+    - TEST_PLATFORM=jvm
+    - TEST_PLATFORM=js
+before_install:
+  - "lsb_release -a"
+  - "sudo apt-get update"
+install: ./travis-install.sh
+cache:
+  directories:
+  - $HOME/.m2
+before_script: pwd
+script: time ./travis-script.sh
+branches:
+  except:
+    - /^DEPLOYED-.*$/
